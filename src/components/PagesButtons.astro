@@ -3,24 +3,26 @@ const pages: Array<any> = [
   {
     title: "Who am I?",
     url: "/about",
+    icon: "person"
   },
-  { title: "Education", url: "/education" },
-  { title: "Work Experience", url: "/work-experience" },
-  { title: "Stack", url: "/stack" },
-  { title: "Projects", url: "/projects" },
+  { title: "Education", url: "/education", icon:"education"},
+  { title: "Work Experience", url: "/work-experience", icon:"briefcase" },
+  { title: "Stack", url: "/stack", icon:"book" },
+  { title: "Projects", url: "/projects", icon:"rocket" },
 ];
 ---
 
 <div
-  class="grid grid-cols-1 gap-y-8 gap-x-10 sm:grid-cols-2 md:grid-cols-3 w-max"
+  class="flex flex-col gap-8"
 >
   {
     pages.map((page) => (
       <a
-        class="flex justify-center p-4 bg-secondary rounded-lg drop-shadow-lg transform hover:scale-110 duration-500"
+        class="flex flex-row gap-4 justify-center p-3 bg-slate-200 rounded-lg drop-shadow-xl transform hover:scale-110 duration-500"
         href={page.url}
       >
-        <h3 class="text-lg font-semibold text-primary">{page.title}</h3>
+        <img class="w-8" src={`icons/${page.icon}.svg`} alt={`${page.title} icon`} />
+        <h3 class="text-lg font-semibold text-black">{page.title}</h3>
       </a>
     ))
   }
