@@ -1,0 +1,17 @@
+---
+import PagesButtons from "../components/PagesButtons.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="flex flex-col gap-12 justify-around items-center h-full text-center">
+  <h1 class="text-white font-bold text-7xl">
+    {title}
+  </h1>
+
+  <PagesButtons />
+</div>

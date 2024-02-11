@@ -1,16 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Title from "../components/Title.astro";
-import PagesButtons from "../components/PagesButtons.astro";
+import Hero from "../components/Hero.astro";
 import SocialButtons from "../components/SocialButtons.astro";
 ---
 
 <Layout title="Hugo's Portfolio">
-  <main
-    class="relative h-full flex flex-col items-center justify-center"
-  >
-    <Title content="Hugo García Cuesta" />
-    <PagesButtons />
+  <main>
+    <Hero title="Hugo's Portfolio" />
     <SocialButtons />
   </main>
 </Layout>
