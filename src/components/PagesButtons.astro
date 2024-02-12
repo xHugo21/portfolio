@@ -2,13 +2,12 @@
 const pages: Array<any> = [
   {
     title: "Who am I?",
-    url: "/about",
-    icon: "person"
+    url: "/about"
   },
-  { title: "Education", url: "/education", icon:"education"},
-  { title: "Work Experience", url: "/work-experience", icon:"briefcase" },
-  { title: "Stack", url: "/stack", icon:"book" },
-  { title: "Projects", url: "/projects", icon:"rocket" },
+  { title: "Education", url: "/education"},
+  { title: "Work Experience", url: "/work-experience"},
+  { title: "Stack", url: "/stack"},
+  { title: "Projects", url: "/projects"},
 ];
 ---
 
@@ -18,11 +17,10 @@ const pages: Array<any> = [
   {
     pages.map((page) => (
       <a
-        class="flex flex-row gap-4 justify-center p-3 bg-slate-200 rounded-lg drop-shadow-xl transform hover:scale-110 duration-500"
+        class="flex flex-row gap-4 justify-center p-3 bg-primary rounded-lg drop-shadow-xl transform hover:scale-110 duration-500"
         href={page.url}
       >
-        <img class="w-8" src={`icons/${page.icon}.svg`} alt={`${page.title} icon`} />
-        <h3 class="text-lg font-semibold text-black">{page.title}</h3>
+        <h3 class="text-lg font-regular text-colorbg">{page.title}</h3>
       </a>
     ))
   }
