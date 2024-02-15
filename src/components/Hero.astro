@@ -1,17 +1,11 @@
 ---
-import PagesButtons from "../components/PagesButtons.astro";
-
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
 ---
 
-<div class="flex flex-row gap-12 justify-around items-center h-full text-center">
-  <h1 class="text-colortext font-bold text-7xl">
-    {title}
+<div class="min-h-svh flex flex-col gap-12 justify-center items-center h-full text-center">
+  <h1 class="font-bold text-6xl">
+    Hi! I am <span class="text-accent">Hugo</span>
   </h1>
-
-  <PagesButtons />
+  <h3 class="text-lg">Head over and discover more about me</h3>
+  <img src="icons/down-arrow.svg" class="w-10 animate-bounce dark:invert"/>
 </div>
+
