@@ -1,54 +1,24 @@
-# Astro Starter Kit: Basics
+<div id="badges" align="center">
+    <a href="https://www.linkedin.com/in/hugo-garc%C3%ADa-cuesta-586847245/">
+        <img src="https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+    </a>
+    <img src="https://komarev.com/ghpvc/?username=xHugo21" alt="Profile Views"/>
+    <a href="https://stackshare.io/xhugo21/hugos-stack">
+        <img src="https://img.shields.io/badge/TechStack-darkblue?logo=techstack&logoColor=white" alt="TechStack Badge"/>
+    </a>
+</div>
 
-```sh
-npm create astro@latest -- --template basics
-```
+<div align="center">
+    <h2 align="center">Hi there 👋</h2>
+    <p>My name is <b>Hugo</b>. I am currently working as a Frontend Developer at <a href="https://empathy.co/" target="_blank">Empathy.co</a></p>
+</div>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+<!--<div align="center">
+    <h2>GitHub Contributions</h2>
+    <img src="https://github-readme-stats.vercel.app/api?username=xHugo21&theme=radical" alt="xHugo21 :: Contributions" />
+</div>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+<div align="center">
+    <h2>Top Languages</h2>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=xHugo21&langs_count=10&theme=radical&layout=compact" alt="xHugo21 :: Top Langs" />
+</div>-->
