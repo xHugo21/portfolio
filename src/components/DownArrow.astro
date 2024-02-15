@@ -1,4 +1,10 @@
 ---
+interface Props {
+    id: string;
+}
+   
+const { id } = Astro.props;
 ---
-
-<img src="icons/down-arrow.svg" alt="down arrow" id="down-arrow" class= "absolute bottom-8 w-10 animate-bounce dark:invert cursor-pointer"/>
+<div class="absolute bottom-8 w-full flex justify-center">
+    <img src="icons/down-arrow.svg" alt="down arrow" id={id} class=" w-10 animate-bounce dark:invert cursor-pointer"/>
+</div>
