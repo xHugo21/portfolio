@@ -1,4 +1,6 @@
 ---
+import EducationBullets from "../components/EducationBullets.astro"
+import WorkBullets from "../components/WorkBullets.astro"
 import MediaCard from "./MediaCard.astro"
 import DownArrow from "../components/DownArrow.astro"
 ---
@@ -7,6 +9,8 @@ import DownArrow from "../components/DownArrow.astro"
     <div>
         <h2 class="font-bold text-5xl mb-12 text-accent">Biography</h2>
         <p class="text-lg font-semibold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet ligula eget magna vehicula tempor. Sed a tortor aliquam, porta ex ac, vulputate turpis. Cras sit amet blandit arcu, ut posuere justo. Morbi et egestas odio. Praesent non arcu pellentesque, euismod odio et, convallis erat. Proin quis ipsum enim. Aliquam erat volutpat. Phasellus quam quam, mollis non tincidunt eget, placerat laoreet elit. Cras et tellus elit. Suspendisse varius non ante ac suscipit. Duis at malesuada nisi.</p>
+        <EducationBullets />
+        <WorkBullets />
     </div>
     <MediaCard src="media/selfie-hugo.jpg" alt="Selfie Hugo"/>
     <DownArrow id="down-arrow-biography"/>

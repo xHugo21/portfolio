@@ -1,0 +1,28 @@
+---
+    const educationCenters = [
+        {
+            name: 'Dominicas Aranda',
+            src: 'media/dominicas-aranda.png'
+        },
+        {
+            name: 'Vela Zanetti',
+            src: 'media/vela-zanetti.png'
+        },
+        {
+            name: 'UC3M',
+            src: 'media/uc3m.png'
+        }
+    ]
+---
+
+<div>
+    <h4 class="text-accent text-2xl font-bold mt-12 mb-6">Education</h4>
+    <div class="flex flex-row items-center gap-4">
+        {educationCenters.map((center) => (
+            <div class="flex justify-center items-center bg-customblack dark:bg-customwhite rounded-full w-24 h-24">
+                <img class="p-2" src={center.src} alt={center.name} />
+            </div>
+            <span class="text-4xl font-bold">--></span>
+        ))}
+    </div>
+</div>
