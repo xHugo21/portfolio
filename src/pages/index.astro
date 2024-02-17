@@ -6,9 +6,20 @@ import Projects from "../components/Projects.astro"
 ---
 
 <Layout title="Hugo's Portfolio">
-  <main>
+  <main class="overflow-y-auto snap-mandatory snap-y h-screen">
     <Hero />
     <Biography />
     <Projects />
   </main>
 </Layout>
+
+<style>
+  main::-webkit-scrollbar {
+    display: none;
+  }
+
+  main {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
