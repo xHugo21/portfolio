@@ -5,7 +5,7 @@ interface Props {
     src: string;
     alt: string;
     link: string;
-    technologies: Array<string>;
+    technologies: Array<any>;
 }
 
 const {title, description, src, alt, link, technologies} = Astro.props
@@ -19,7 +19,7 @@ const {title, description, src, alt, link, technologies} = Astro.props
         <h5 class="text-md font-semibold">Built using:</h5>
         {
             technologies.map((element) => (
-                <p class="font-regular text-sm">{element}</p>
+                <p class="font-regular text-sm">{element.name}</p>
             ))
         }
     </div>
