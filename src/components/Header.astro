@@ -1,12 +1,11 @@
 ---
-import PagesButtons from "./PagesButtons.astro"
+import SocialButtons from "./SocialButtons.astro"
 ---
 
-<div class="w-full min-h-16 px-16 bg-white dark:bg-black drop-shadow-xl flex flex-row justify-between items-center">
+<div class="w-full min-h-16 px-4 md:px-8 lg:px-16 bg-white dark:bg-black drop-shadow-xl flex flex-row justify-between items-center">
     <div class="flex flex-row justify-center items-center gap-4">
         <img src="icons/logo.svg" alt="H Logo" class="w-10" />
-        <p class="font-bold">Hugo García</p>
+        <p class="font-bold hidden md:block">Hugo García</p>
     </div>
-
-    <PagesButtons />
+    <SocialButtons />
 </div>
