@@ -1,0 +1,50 @@
+---
+    interface Props {
+        type: '1' | '2';
+    };
+
+    const { type } = Astro.props;
+
+    const educationCenters = [
+        {
+            name: 'Dominicas Aranda',
+            src: 'media/dominicas-aranda.png',
+            interval: '2003 - 2016'
+        },
+        {
+            name: 'Vela Zanetti',
+            src: 'media/vela-zanetti.png',
+            interval: '2017 - 2019'
+        },
+        {
+            name: 'UC3M',
+            src: 'media/uc3m.png',
+            interval: '2019 - 2023'
+        }
+    ];
+
+    const workCenters = [
+        {
+            name: 'Empathy.co',
+            src: 'media/empathy.png',
+            interval: '2023 - ...'
+        }
+    ];
+
+    const selected = type === '1' ? educationCenters : workCenters
+---
+
+<div>
+    <h4 class="text-accent text-2xl font-bold mt-12 mb-6">Education</h4>
+    <div class="flex flex-row items-center gap-4">
+        {selected.map((element) => (
+            <div class="group relative flex justify-center items-center bg-customblack dark:bg-customwhite rounded-full w-24 h-24 hover:scale-110 transition-transform duration-500 cursor-pointer">
+                <img class="p-2 max-w-20" src={element.src} alt={element.name} />
+                <div class="absolute -bottom-8 text-customblack dark:bg-customwhite rounded-lg hidden group-hover:block">
+                    <p class="text-sm font-semibold p-1">{element.interval}</p>
+                </div>
+            </div>
+            <span class="text-4xl font-bold">--></span>
+        ))}
+    </div>
+</div>
