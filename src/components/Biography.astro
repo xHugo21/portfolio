@@ -1,9 +1,44 @@
 ---
+import CareerBullets from "./CareerBullets.astro"
+import MediaCard from "./MediaCard.astro"
 import DownArrow from "../components/DownArrow.astro"
+
+const educationCenters = [
+        {
+            name: 'Dominicas Aranda',
+            src: 'media/dominicas-aranda.png',
+            interval: '2003 - 2016'
+        },
+        {
+            name: 'Vela Zanetti',
+            src: 'media/vela-zanetti.png',
+            interval: '2017 - 2019'
+        },
+        {
+            name: 'UC3M',
+            src: 'media/uc3m.png',
+            interval: '2019 - 2023'
+        }
+    ];
+
+    const workCenters = [
+        {
+            name: 'Empathy.co',
+            src: 'media/empathy.png',
+            interval: '2023 - ...'
+        }
+    ];
 ---
 
-<section class="relative min-h-svh py-28 w-9/12 mx-auto bg-colorbg dark:bg-customblack">
-    <h2 class="font-bold text-5xl mb-12 text-accent">Biography</h2>
-    <p class="text-lg font-semibold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet ligula eget magna vehicula tempor. Sed a tortor aliquam, porta ex ac, vulputate turpis. Cras sit amet blandit arcu, ut posuere justo. Morbi et egestas odio. Praesent non arcu pellentesque, euismod odio et, convallis erat. Proin quis ipsum enim. Aliquam erat volutpat. Phasellus quam quam, mollis non tincidunt eget, placerat laoreet elit. Cras et tellus elit. Suspendisse varius non ante ac suscipit. Duis at malesuada nisi.</p>
+<section class="relative flex flex-row gap-8 min-h-svh py-28 w-9/12 mx-auto bg-colorbg dark:bg-customblack">
+    <div class="space-y-4">
+        <h2 class="font-bold text-5xl mb-12 text-accent">Biography</h2>
+        <p class="text-lg font-semibold">I am a dedicated computer engineer, [Your Full Name], with a [Your Degree] in [Your Field] from [Your University]. Over the past [X years] in the field, I have developed expertise in [Your Primary Areas of Expertise], showcasing my skills through impactful projects at [Previous Employers or Projects]. My journey has equipped me with a strong technical toolkit, proficiency in [List of Programming Languages, Software, and Tools], and a passion for finding innovative solutions.</p>
+        <p class="text-lg font-semibold">In addition to my technical prowess, I am recognized for my [Personal Trait 1], [Personal Trait 2], and [Personal Trait 3], fostering collaborative and inclusive work environments. Beyond code, I find joy in [Your Hobbies or Interests], aligning my values with community impact through [Any Volunteer Work or Extracurricular Activities]. Committed to continuous learning, I am currently engaged in [Any Ongoing Learning Initiatives or Courses] to stay ahead in this ever-evolving technological landscape.</p>
+        <p class="text-lg font-semibold">Let's connect and explore the limitless possibilities at the intersection of technology and innovation. Feel free to reach out via email at [Your Email Address] or connect with me on LinkedIn ([Your LinkedIn Profile]) and GitHub ([Your GitHub Profile]).</p>
+        <CareerBullets centers={educationCenters}/>
+        <CareerBullets centers={workCenters} />
+    </div>
+    <MediaCard src="media/selfie-hugo.jpg" alt="Selfie Hugo"/>
     <DownArrow id="down-arrow-biography"/>
 </section>
