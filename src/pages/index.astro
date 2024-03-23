@@ -2,13 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Biography from "../components/Biography.astro"
+import Career from "../components/Career.astro"
 import Projects from "../components/Projects.astro"
 ---
 
 <Layout title="Hugo's Portfolio">
-  <main class="overflow-y-auto snap-mandatory snap-y h-screen">
+  <main class="overflow-y-auto snap-mandatory snap-y h-screen mx-12 md:mx-16 lg:mx-28">
     <Hero />
     <Biography />
+    <Career />
     <Projects />
   </main>
 </Layout>

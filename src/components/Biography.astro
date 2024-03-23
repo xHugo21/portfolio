@@ -1,50 +1,19 @@
 ---
-import CareerBullets from "./CareerBullets.astro"
 import MediaCard from "./MediaCard.astro"
-import DownArrow from "../components/DownArrow.astro"
 import ContentStyling from "../components/ContentStyling.astro"
 import { getEntry } from 'astro:content';
 
 const biographyRes = await getEntry('biography', 'biography');
 
 const { Content } = await biographyRes.render();
-
-const educationCenters = [
-        {
-            name: 'Dominicas Aranda',
-            src: 'media/dominicas-aranda.png',
-            interval: '2003 - 2016'
-        },
-        {
-            name: 'Vela Zanetti',
-            src: 'media/vela-zanetti.png',
-            interval: '2017 - 2019'
-        },
-        {
-            name: 'UC3M',
-            src: 'media/uc3m.png',
-            interval: '2019 - 2023'
-        }
-    ];
-
-    const workCenters = [
-        {
-            name: 'Empathy.co',
-            src: 'media/empathy.png',
-            interval: '2023 - ...'
-        }
-    ];
 ---
 
-<section class="snap-end relative flex flex-col lg:flex-row gap-8 min-h-svh py-28 w-9/12 mx-auto bg-colorbg dark:bg-customblack">
+<section class="snap-end relative flex flex-col lg:flex-row gap-8 min-h-[calc(100vh-4rem)] py-28">
     <div class="space-y-4">
         <h2 class="font-bold text-5xl mb-12">Biography</h2>
         <ContentStyling>
             <Content />
         </ContentStyling>
-        <CareerBullets title="Education" content={educationCenters}/>
-        <CareerBullets title="Work Experience" content={workCenters} />
     </div>
     <MediaCard src="media/selfie-hugo.jpg" alt="Selfie Hugo"/>
-    <DownArrow id="down-arrow-biography"/>
 </section>

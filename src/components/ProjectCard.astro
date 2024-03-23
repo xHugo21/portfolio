@@ -12,7 +12,7 @@ const {title, description, src, alt, link, technologies} = Astro.props
 ---
 
 <a class="flex flex-col space-y-2 justify-center bg-slate-500 bg-opacity-20 p-4 w-fit h-fit rounded-md hover:scale-105 transition-transform duration-300 cursor-pointer" href={link} target="_blank">
-    <img src={src} alt={alt} />
+    <img class="aspect-[16/9] object-cover" src={src} alt={alt} />
     <h4 class="font-semibold text-lg">{title}</h4>
     <p class="font-regular text-sm">{description}</p>
     <div class="flex flex-row gap-2 items-center">
