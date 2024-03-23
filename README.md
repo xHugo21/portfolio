@@ -2,6 +2,6 @@
 
 Hi all! 👋 
 
-This is my portfolio built using Astro 🚀
+This is my personal portfolio. Built using Astro 🚀
 
-Website: https://xhugo21.github.io/portfolio
+You can access it by clicking [here](https://xHugo21.github.io/portfolio)
