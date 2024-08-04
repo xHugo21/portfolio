@@ -1,7 +1,7 @@
-# Hugo's Portfolio
+# :standing_person: Hugo's Portfolio
 
-Hi all! 👋 
+Hi all! 👋
 
-This is my portfolio built using Astro 🚀
+This is my personal portfolio, built with the intention of being updated through my professional career and let others know more about me and the projects I am involved in.
 
-Website: https://xhugo21.github.io/portfolio
+You can access it through this [link](https://xHugo21.github.io/portfolio)
