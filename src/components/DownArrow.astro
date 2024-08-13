@@ -1,5 +1,42 @@
 ---
+
 ---
-<div class="absolute bottom-8 w-full flex justify-center">
-    <img src="icons/down-arrow.svg" alt="Down Arrow" class=" w-10 animate-bounce dark:invert cursor-pointer"/>
+
+<div
+  class="down-arrow transition-opacity absolute bottom-[16px] w-full flex justify-center"
+>
+  <img
+    src="icons/down-arrow.svg"
+    alt="Down Arrow"
+    class="w-10 animate-bounce dark:invert cursor-pointer"
+  />
 </div>
+
+<script>
+  const downArrow = document.querySelector('.down-arrow') as HTMLElement
+
+  const throttle = (mainFunction: any, delay: number) => {
+    let timerFlag: any = null
+
+    return (...args: any) => {
+      if (timerFlag === null) {
+        mainFunction(...args)
+        timerFlag = setTimeout(() => {
+          timerFlag = null
+        }, delay)
+      }
+    }
+  }
+
+  const checkScroll = () => {
+    if (downArrow) {
+      if (window.scrollY >= window.innerHeight / 3) {
+        downArrow.style.opacity = '0'
+      } else {
+        downArrow.style.opacity = '1'
+      }
+    }
+  }
+
+  document.addEventListener('scroll', throttle(checkScroll, 100))
+</script>

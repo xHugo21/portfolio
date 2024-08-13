@@ -1,21 +1,29 @@
 ---
-    interface Props {
-        title: string;
-        content: Array<any>;
-    };
+interface Props {
+  title: string
+  content: Array<any>
+}
 
-    const { title, content } = Astro.props;
+const { title, content } = Astro.props
 ---
 
 <div>
-    <h4 class="text-accent text-2xl font-bold mt-12 mb-6">{title}</h4>
-    <div class="flex flex-row items-center gap-4">
-        {content.map((element) => (
-            <div class="group relative flex justify-center items-center bg-slate-500 bg-opacity-20 dark:bg-customwhite dark:bg-opacity-100 rounded-full w-24 h-24 hover:scale-110 transition-transform duration-500 cursor-pointer">
-                <img class="p-2 max-w-20" src={element.src} alt={element.name} />
-                <p class="absolute -bottom-8 hidden group-hover:block text-sm font-semibold p-1">{element.interval}</p>
-            </div>
+  <h4 class="text-tertiary text-2xl font-bold mt-12 mb-6">{title}</h4>
+  <div class="flex flex-row items-center gap-4">
+    {
+      content.map((element, index) => (
+        <>
+          <div class="group relative flex justify-center items-center bg-slate-500 bg-opacity-20 dark:bg-customwhite dark:bg-opacity-100 rounded-lg w-24 h-24 hover:scale-110 transition-transform duration-500 cursor-pointer">
+            <img class="p-2 max-w-20" src={element.src} alt={element.name} />
+            <p class="absolute -bottom-8 hidden group-hover:block text-sm font-semibold p-1">
+              {element.interval}
+            </p>
+          </div>
+          {index < content.length - 1 && (
             <span class="text-4xl font-bold">></span>
-        ))}
-    </div>
+          )}
+        </>
+      ))
+    }
+  </div>
 </div>
