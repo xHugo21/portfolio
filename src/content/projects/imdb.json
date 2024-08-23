@@ -1,17 +1,17 @@
 {
-    "title": "IMDb Clone",
-    "description": "Application designed and built over the idea of quickly finding a new movie / TV show to watch.",
-    "src": "media/imdb.png",
-    "alt": "IMDb Clone Preview",
-    "link": "https://github.com/xHugo21/imdb_academy",
-    "technologies": [
-        {
-            "name": "Vue",
-            "color": "green"
-        },
-        {
-            "name": "TypeScript",
-            "color": "blue"
-        }
-    ]
+  "title": "IMDb Clone",
+  "description": "Easily find new movies and TV shows to watch. Data retrieved from IMDb and TMDb APIs",
+  "src": "media/imdb.png",
+  "alt": "IMDb Clone Preview",
+  "link": "https://github.com/xHugo21/imdb_academy",
+  "technologies": [
+    {
+      "name": "Vue",
+      "color": "green"
+    },
+    {
+      "name": "TypeScript",
+      "color": "blue"
+    }
+  ]
 }
