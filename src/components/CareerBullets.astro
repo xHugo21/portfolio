@@ -14,7 +14,7 @@ const { title, content } = Astro.props
       content.map((element, index) => (
         <>
           <div class="group relative flex justify-center items-center bg-slate-500 bg-opacity-20 dark:bg-customwhite dark:bg-opacity-100 rounded-lg w-24 h-24 hover:scale-110 transition-transform duration-500 cursor-pointer">
-            <img class="p-2 max-w-20" src={element.src} alt={element.name} />
+            <img class="p-1 w-20" src={element.src} alt={element.name} />
             <p class="absolute -bottom-8 hidden group-hover:block text-sm font-semibold p-1">
               {element.interval}
             </p>

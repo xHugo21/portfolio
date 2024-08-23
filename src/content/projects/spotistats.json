@@ -1,0 +1,13 @@
+{
+  "title": "Spotistats",
+  "description": "A web application that provides insights about your Spotify listening habits",
+  "src": "media/spotistats.png",
+  "alt": "Spotistats",
+  "link": "https://github.com/xHugo21/spotistats",
+  "technologies": [
+    {
+      "name": "React",
+      "color": "blue"
+    }
+  ]
+}
