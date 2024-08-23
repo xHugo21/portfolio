@@ -3,11 +3,13 @@ import SocialButtons from './SocialButtons.astro'
 ---
 
 <div
-  class="fixed z-10 w-full h-16 px-4 md:px-8 lg:px-16 bg-white dark:bg-customblack drop-shadow-xl flex flex-row justify-between items-center"
+  class="fixed z-10 w-full h-16 bg-white dark:bg-customblack drop-shadow-xl flex flex-row justify-center items-center"
 >
-  <div class="flex flex-row justify-center items-center gap-4">
-    <img src="icons/logo.svg" alt="H Logo" class="w-10" />
-    <p class="font-bold hidden md:block select-none">Hugo García</p>
+  <div class="flex justify-between items-center w-[90%] lg:w-[60%] mx-auto">
+    <div class="flex flex-row justify-center items-center gap-4">
+      <img src="icons/logo.svg" alt="H Logo" class="w-10" />
+      <p class="font-bold hidden md:block select-none">Hugo García</p>
+    </div>
+    <SocialButtons />
   </div>
-  <SocialButtons />
 </div>
