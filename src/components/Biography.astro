@@ -1,5 +1,6 @@
 ---
-import CareerBullets from '../components/CareerBullets.astro'
+import { Separator } from '../components/ui/separator'
+import CareerCards from './CareerCards.astro'
 import ContentStyling from '../components/ContentStyling.astro'
 import { getCollection, getEntry } from 'astro:content'
 
@@ -21,13 +22,13 @@ const sortedCareerCenters = careerCollection.sort(sortByInterval)
 
 const educationCenters = sortedEducationCenters.map((item) => ({
   name: item.data.name,
-  src: item.data.src,
+  title: item.data.title,
   interval: item.data.interval,
 }))
 
 const workCenters = sortedCareerCenters.map((item) => ({
   name: item.data.name,
-  src: item.data.src,
+  title: item.data.title,
   interval: item.data.interval,
 }))
 ---
@@ -39,8 +40,9 @@ const workCenters = sortedCareerCenters.map((item) => ({
       <Content />
     </ContentStyling>
   </div>
-  <div class="flex gap-16">
-    <CareerBullets title="Education" content={educationCenters} />
-    <CareerBullets title="Work Experience" content={workCenters} />
+  <Separator />
+  <div class="grid md:grid-cols-2 gap-8">
+    <CareerCards title="Education" content={educationCenters} />
+    <CareerCards title="Work Experience" content={workCenters} />
   </div>
 </section>

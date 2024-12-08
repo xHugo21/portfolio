@@ -25,7 +25,7 @@ const bulletCollection = defineCollection({
   type: 'data',
   schema: z.object({
     name: z.string(),
-    src: z.string(),
+    title: z.string(),
     interval: z.string(),
   }),
 })
