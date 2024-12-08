@@ -1,36 +1,27 @@
 ---
-const socials = [
-  {
-    name: 'github',
-    link: 'https://github.com/xHugo21',
-    src: 'icons/github.svg',
-    alt: 'GitHub Icon',
-  },
-  {
-    name: 'linkedin',
-    link: 'https://www.linkedin.com/in/hugogarciacuesta/',
-    src: 'icons/linkedin.svg',
-    alt: 'LinkedIn Icon',
-  },
-  {
-    name: 'mail',
-    link: 'mailto:hugo2121h@gmail.com',
-    src: 'icons/letter.svg',
-    alt: 'Mail Icon',
-  },
-]
+import { Github, Linkedin, Mail } from 'lucide-astro'
 ---
 
 <div class="flex flex-row gap-6">
-  {
-    socials.map((element) => (
-      <a
-        class="w-6 duration-500 transition-transform hover:scale-105"
-        href={element.link}
-        target="_blank"
-      >
-        <img class="dark:invert" src={element.src} alt={element.alt} />
-      </a>
-    ))
-  }
+  <a
+    class="w-6 duration-500 transition-transform hover:scale-105"
+    href="https://github.com/xHugo21"
+    target="_blank"
+  >
+    <Github />
+  </a>
+  <a
+    class="w-6 duration-500 transition-transform hover:scale-105"
+    href="https://www.linkedin.com/in/hugogarciacuesta"
+    target="_blank"
+  >
+    <Linkedin />
+  </a>
+  <a
+    class="w-6 duration-500 transition-transform hover:scale-105"
+    href="mailto:hugo2121h@gmail.com"
+    target="_blank"
+  >
+    <Mail />
+  </a>
 </div>
