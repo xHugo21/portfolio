@@ -1,26 +1,48 @@
 ---
+import { Card, CardContent, CardTitle, CardHeader } from '../components/ui/card'
+import { Badge } from '../components/ui/badge'
+
 interface Props {
-    title: string;
-    description: string;
-    src: string;
-    alt: string;
-    link: string;
-    technologies: Array<any>;
+  title: string
+  description: string
+  src: string
+  alt: string
+  link: string
+  technologies: Array<any>
 }
 
-const {title, description, src, alt, link, technologies} = Astro.props
+const { title, description, src, alt, link, technologies } = Astro.props
 ---
 
-<a class="flex flex-col space-y-2 justify-center bg-slate-500 bg-opacity-20 p-4 w-fit h-fit rounded-md hover:scale-105 transition-transform duration-300 cursor-pointer" href={link} target="_blank">
-    <img class="aspect-[16/9] object-cover" src={src} alt={alt} />
-    <h4 class="font-semibold text-lg">{title}</h4>
-    <p class="font-regular text-sm">{description}</p>
-    <div class="flex flex-row gap-2 items-center">
-        <h5 class="text-md font-semibold">Built using:</h5>
-        {
-            technologies.map((element) => (
-                <p class="font-regular text-sm">{element.name}</p>
-            ))
-        }
+<Card
+  key={title}
+  className="group bg-slate-900/50 border-slate-800 overflow-hidden"
+>
+  <CardHeader className="p-0">
+    <a
+      href={link}
+      target="_blank"
+      class="relative block w-full aspect-[16/9] overflow-hidden"
+    >
+      <img
+        src={src}
+        alt={alt}
+        class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+      />
+    </a>
+  </CardHeader>
+  <CardContent className="p-6">
+    <CardTitle className="text-xl mb-2">{title}</CardTitle>
+    <p class="text-sm text-slate-300 mb-4">{description}</p>
+    <div class="flex flex-wrap gap-2">
+      <div class="text-sm text-slate-400 mr-2">Built using:</div>
+      {
+        technologies.map((tech) => (
+          <Badge variant="secondary" className="bg-slate-800 text-slate-200">
+            {tech.name}
+          </Badge>
+        ))
+      }
     </div>
-</a>
+  </CardContent>
+</Card>

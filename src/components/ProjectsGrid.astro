@@ -1,14 +1,22 @@
 ---
-import ProjectCard from "../components/ProjectCard.astro"
-import { getCollection } from 'astro:content';
+import ProjectCard from '../components/ProjectCard.astro'
+import { getCollection } from 'astro:content'
 
-const projects = await getCollection('projects');
+const projects = await getCollection('projects')
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {
-        projects.map((element) => (
-            <ProjectCard title={element.data.title} description={element.data.description} src={element.data.src} alt={element.data.alt} link={element.data.link} technologies={element.data.technologies} />
-        ))
-    }
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {
+    projects.map((element) => (
+      <ProjectCard
+        title={element.data.title}
+        description={element.data.description}
+        src={element.data.src}
+        alt={element.data.alt}
+        link={element.data.link}
+        technologies={element.data.technologies}
+      />
+    ))
+  }
 </div>
+
