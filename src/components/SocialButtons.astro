@@ -1,27 +1,37 @@
 ---
 import { Github, Linkedin, Mail } from 'lucide-astro'
+
+const links = [
+  {
+    href: 'https://github.com/xHugo21',
+    label: 'GitHub',
+    Icon: Github,
+  },
+  {
+    href: 'https://www.linkedin.com/in/hugogarciacuesta',
+    label: 'LinkedIn',
+    Icon: Linkedin,
+  },
+  {
+    href: 'mailto:hugo2121h@gmail.com',
+    label: 'Email',
+    Icon: Mail,
+  },
+]
 ---
 
 <div class="flex flex-row gap-6">
-  <a
-    class="w-6 duration-500 transition-transform hover:scale-105"
-    href="https://github.com/xHugo21"
-    target="_blank"
-  >
-    <Github />
-  </a>
-  <a
-    class="w-6 duration-500 transition-transform hover:scale-105"
-    href="https://www.linkedin.com/in/hugogarciacuesta"
-    target="_blank"
-  >
-    <Linkedin />
-  </a>
-  <a
-    class="w-6 duration-500 transition-transform hover:scale-105"
-    href="mailto:hugo2121h@gmail.com"
-    target="_blank"
-  >
-    <Mail />
-  </a>
+  {
+    links.map(({ href, label, Icon }) => (
+      <a
+        class="w-6 duration-500 transition-transform hover:scale-105"
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={label}
+      >
+        <Icon />
+      </a>
+    ))
+  }
 </div>
