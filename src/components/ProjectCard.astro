@@ -16,7 +16,7 @@ const { title, description, src, alt, link, technologies } = Astro.props
 
 <Card
   key={title}
-  className="group bg-slate-900/50 border-slate-800 overflow-hidden"
+  className="group dark:bg-slate-900/50 dark:border-slate-800 overflow-hidden"
 >
   <CardHeader className="p-0">
     <a
@@ -33,12 +33,15 @@ const { title, description, src, alt, link, technologies } = Astro.props
   </CardHeader>
   <CardContent className="p-6">
     <CardTitle className="text-xl mb-2">{title}</CardTitle>
-    <p class="text-sm text-slate-300 mb-4">{description}</p>
+    <p class="text-sm text-slate-400 mb-4">{description}</p>
     <div class="flex flex-wrap gap-2">
       <div class="text-sm text-slate-400 mr-2">Built using:</div>
       {
         technologies.map((tech) => (
-          <Badge variant="secondary" className="bg-slate-800 text-slate-200">
+          <Badge
+            variant="secondary"
+            className="dark:bg-slate-800 dark:text-slate-200"
+          >
             {tech.name}
           </Badge>
         ))
