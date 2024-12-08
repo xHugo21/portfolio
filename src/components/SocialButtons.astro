@@ -1,35 +1,36 @@
 ---
-const socials = [
+import { Github, Linkedin, Mail } from 'lucide-react'
+
+const links = [
   {
-    name: 'github',
-    link: 'https://github.com/xHugo21',
-    src: 'icons/github.svg',
-    alt: 'GitHub Icon',
+    href: 'https://github.com/xHugo21',
+    label: 'GitHub',
+    Icon: Github,
   },
   {
-    name: 'linkedin',
-    link: 'https://www.linkedin.com/in/hugogarciacuesta/',
-    src: 'icons/linkedin.svg',
-    alt: 'LinkedIn Icon',
+    href: 'https://www.linkedin.com/in/hugogarciacuesta',
+    label: 'LinkedIn',
+    Icon: Linkedin,
   },
   {
-    name: 'mail',
-    link: 'mailto:hugo2121h@gmail.com',
-    src: 'icons/letter.svg',
-    alt: 'Mail Icon',
+    href: 'mailto:hugo2121h@gmail.com',
+    label: 'Email',
+    Icon: Mail,
   },
 ]
 ---
 
 <div class="flex flex-row gap-6">
   {
-    socials.map((element) => (
+    links.map(({ href, label, Icon }) => (
       <a
         class="w-6 duration-500 transition-transform hover:scale-105"
-        href={element.link}
+        href={href}
         target="_blank"
+        rel="noopener noreferrer"
+        aria-label={label}
       >
-        <img class="dark:invert" src={element.src} alt={element.alt} />
+        <Icon />
       </a>
     ))
   }
