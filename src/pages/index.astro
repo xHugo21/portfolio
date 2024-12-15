@@ -3,6 +3,7 @@ import '@/styles/globals.css'
 import Layout from '../layouts/Layout.astro'
 import Biography from '../components/Biography.astro'
 import Projects from '../components/Projects.astro'
+import Contact from '../components/Contact.tsx'
 ---
 
 <script is:inline>
@@ -33,5 +34,6 @@ import Projects from '../components/Projects.astro'
   <main class="w-[85%] md:max-w-[900px] mx-auto flex flex-col gap-32">
     <Biography />
     <Projects />
+    <Contact />
   </main>
 </Layout>
