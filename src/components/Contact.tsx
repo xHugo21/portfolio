@@ -56,7 +56,7 @@ export default function Contact() {
 
   return (
     <section className="mb-12">
-      <div className=" mx-auto space-y-8">
+      <div className="space-y-8 mx-auto max-w-lg">
         <h2 className="text-4xl font-bold tracking-tighter text-purple-400">
           Get in Touch
         </h2>
