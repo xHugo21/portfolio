@@ -2,11 +2,11 @@
 import { Separator } from '../components/ui/separator'
 import CareerCards from './CareerCards.astro'
 import ContentStyling from '../components/ContentStyling.astro'
-import { getCollection, getEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
 
-const biographyRes = await getEntry('biography', 'biography')
+const [biographyEntry] = await getCollection('biography')
 
-const { Content } = await biographyRes.render()
+const { Content } = await biographyEntry.render()
 
 const educationCollection = await getCollection('education')
 const careerCollection = await getCollection('career')
