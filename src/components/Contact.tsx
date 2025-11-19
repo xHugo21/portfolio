@@ -1,14 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type ChangeEvent, type FormEvent } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
 import emailjs from '@emailjs/browser'
 
 export default function Contact() {
@@ -19,8 +12,10 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [responseMessage, setResponseMessage] = useState('')
 
-  const handleInputChange = (e) => {
-    const { id, value } = e.target
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target as HTMLInputElement | HTMLTextAreaElement
     setFormData((prevData) => ({
       ...prevData,
       [id]: value,
@@ -34,7 +29,7 @@ export default function Contact() {
     }
   }, [])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     setResponseMessage('')
@@ -61,70 +56,71 @@ export default function Contact() {
   }
 
   return (
-    <section className="mb-12">
-      <div className="space-y-8 mx-auto max-w-lg">
-        <h2 className="text-4xl font-bold tracking-tighter text-purple-400">
-          Get in Touch
-        </h2>
-        <Card className="bg-slate-800 border-slate-700 dark:bg-slate-900/50 dark:border-slate-800">
-          <CardHeader>
-            <CardTitle className="text-2xl text-slate-100">
-              Contact Me
-            </CardTitle>
-            <CardDescription className="text-slate-400">
-              Feel free to reach out if you have any questions or opportunities!
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              <div className="space-y-2">
-                <label
-                  htmlFor="from_name"
-                  className="text-sm font-medium text-slate-200"
-                >
-                  Email
-                </label>
-                <Input
-                  id="from_name"
-                  type="email"
-                  placeholder="your.email@example.com"
-                  className="bg-slate-700 border-slate-600 text-slate-100"
-                  value={formData.from_name}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label
-                  htmlFor="message"
-                  className="text-sm font-medium text-slate-200"
-                >
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  placeholder="Your message here..."
-                  className="bg-slate-700 border-slate-600 text-slate-100"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-              <Button
-                type="submit"
-                className="w-full bg-purple-600 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-700 text-white dark:text-white"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-              </Button>
-            </form>
-            {responseMessage && (
-              <p className="mt-4 text-center text-slate-300">
-                {responseMessage}
-              </p>
-            )}
-          </CardContent>
-        </Card>
+    <section className="relative scroll-mt-24" id="contact">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute left-[10%] top-[-5%] h-48 w-48 rounded-full bg-[#fb9d72]/40 blur-[100px] dark:bg-[#fb9d72]/25" />
+        <div className="absolute right-[8%] bottom-[-5%] h-52 w-52 rounded-full bg-[#8dd9c9]/35 blur-[100px] dark:bg-[#6f7bff]/25" />
+      </div>
+      <div className="relative mx-auto max-w-3xl rounded-3xl border border-[#0d1017]/10 bg-white/80 p-8 md:p-10 shadow-[0_25px_60px_rgba(0,0,0,0.07)] backdrop-blur dark:bg-white/5 dark:border-white/10">
+        <div className="space-y-2">
+          <p className="text-xs uppercase tracking-[0.28em] text-[#6c707c] dark:text-slate-400">
+            Contact
+          </p>
+          <h2 className="text-3xl font-semibold leading-tight">
+            Let&apos;s build something purposeful together.
+          </h2>
+          <p className="text-base text-[#3a3f48] dark:text-slate-300">
+            Tell me about your team, your product, or the experience you want to
+            craft—I&apos;ll reply within a day.
+          </p>
+        </div>
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <div className="space-y-2">
+            <label
+              htmlFor="from_name"
+              className="text-sm font-semibold text-[#0d1017] dark:text-[#f6f1e7]"
+            >
+              Email
+            </label>
+            <Input
+              id="from_name"
+              type="email"
+              placeholder="your.email@example.com"
+              className="border-[#0d1017]/15 bg-white/80 text-[#0d1017] shadow-[0_6px_25px_rgba(0,0,0,0.03)] placeholder:text-[#6c707c] dark:border-white/15 dark:bg-white/10 dark:text-[#f6f1e7] dark:placeholder:text-slate-400"
+              value={formData.from_name}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <div className="space-y-2">
+            <label
+              htmlFor="message"
+              className="text-sm font-semibold text-[#0d1017] dark:text-[#f6f1e7]"
+            >
+              Message
+            </label>
+            <Textarea
+              id="message"
+              placeholder="What would you like to collaborate on?"
+              className="min-h-[160px] border-[#0d1017]/15 bg-white/80 text-[#0d1017] shadow-[0_6px_25px_rgba(0,0,0,0.03)] placeholder:text-[#6c707c] dark:border-white/15 dark:bg-white/10 dark:text-[#f6f1e7] dark:placeholder:text-slate-400"
+              value={formData.message}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <Button
+            type="submit"
+            className="w-full justify-center bg-[#0d1017] text-[#f7f4ef] transition-transform duration-300 hover:-translate-y-0.5 hover:bg-[#0d1017] dark:bg-[#f7f4ef] dark:text-[#0d1017] dark:hover:bg-[#f7f4ef]"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Sending...' : 'Send Message'}
+          </Button>
+        </form>
+        {responseMessage && (
+          <p className="mt-4 text-center text-[#0d1017] dark:text-[#f6f1e7]">
+            {responseMessage}
+          </p>
+        )}
       </div>
     </section>
   )

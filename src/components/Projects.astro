@@ -1,8 +1,26 @@
 ---
 import ProjectsGrid from '../components/ProjectsGrid.astro'
+
 ---
 
-<section class="snap-end relative flex flex-col gap-4">
-  <h2 class="text-purple-400 font-bold text-4xl mb-8">Projects</h2>
+<section id="projects" class="relative flex flex-col gap-8 scroll-mt-24">
+  <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+    <div class="space-y-2">
+      <p class="text-xs uppercase tracking-[0.28em] text-[#6c707c] dark:text-slate-400">
+        Selected work
+      </p>
+      <h2 class="text-3xl md:text-4xl font-semibold leading-tight">
+        Interfaces crafted with intention and technical care.
+      </h2>
+      <p class="text-base text-[#3a3f48] dark:text-slate-300 max-w-2xl">
+        A mix of professional and personal projects, each focused on clarity,
+        momentum, and thoughtful details.
+      </p>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-[#6c707c] dark:text-slate-400">
+      <span class="h-2 w-2 rounded-full bg-gradient-to-r from-[#fb9d72] to-[#8dd9c9]"></span>
+      <span>Hover cards for a closer look</span>
+    </div>
+  </div>
   <ProjectsGrid />
 </section>

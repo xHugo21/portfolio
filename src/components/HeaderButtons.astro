@@ -15,18 +15,18 @@ const links = [
 ]
 ---
 
-<div class="flex flex-row gap-6">
+<div class="flex flex-row gap-3 items-center">
   {
     links.map(({ href, label, Icon }) => (
       <a
-        class="w-6 duration-500 transition-transform hover:scale-105"
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={label}
-      >
-        <Icon />
-      </a>
-    ))
+        class="group flex h-10 w-10 items-center justify-center rounded-full border border-[#0d1017]/10 bg-white/80 text-[#0d1017] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-[#0d1017]/20 dark:bg-white/5 dark:text-[#f6f1e7] dark:border-white/10 dark:hover:border-white/25"
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={label}
+  >
+    <Icon className="h-5 w-5" />
+  </a>
+))
   }
 </div>

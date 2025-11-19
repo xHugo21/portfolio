@@ -31,19 +31,60 @@ const workCenters = sortedCareerCenters.map((item) => ({
   title: item.data.title,
   interval: item.data.interval,
 }))
+
 ---
 
-<section class="flex flex-col gap-8 mt-28 md:mt-32">
-  <div class="space-y-4">
-    <h2 class="text-purple-400 font-bold text-4xl mb-8">Biography</h2>
-    <div class="dark:text-slate-300">
-      <ContentStyling>
-        <Content />
-      </ContentStyling>
+<section
+  id="biography"
+  class="relative flex flex-col gap-12 mt-16 md:mt-24 scroll-mt-24"
+>
+  <div class="grid md:grid-cols-[1.05fr_0.95fr] gap-10 items-start">
+    <div class="space-y-6">
+      <div
+        class="inline-flex items-center gap-2 rounded-full border border-[#0d1017]/10 bg-white/70 px-4 py-2 text-xs uppercase tracking-[0.28em] text-[#6c707c] shadow-sm dark:bg-white/5 dark:text-slate-300 dark:border-white/10"
+      >
+        Spanish Computer Engineer • Frontend
+      </div>
+      <h1 class="text-4xl md:text-5xl font-semibold leading-tight">
+        Building calm, tactile interfaces with a focus on clarity and polish.
+      </h1>
+      <p class="text-base md:text-lg text-[#3a3f48] dark:text-slate-300">
+        I design and ship frontends that feel effortless, combining thoughtful
+        UX with resilient engineering.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <span
+          class="rounded-full bg-gradient-to-r from-[#fb9d72] to-[#8dd9c9] px-3 py-1 text-xs font-semibold text-[#0d1017]"
+        >
+          Design-led engineer
+        </span>
+        <span
+          class="rounded-full border border-[#0d1017]/15 px-3 py-1 text-xs font-semibold text-[#0d1017] dark:text-[#f6f1e7] dark:border-white/10"
+        >
+          Based in Spain · Remote friendly
+        </span>
+      </div>
+    </div>
+    <div
+      class="rounded-3xl border border-[#0d1017]/10 bg-white/70 p-6 md:p-8 shadow-[0_20px_60px_rgba(0,0,0,0.06)] backdrop-blur dark:bg-white/5 dark:border-white/10"
+    >
+      <div class="flex items-center justify-between">
+        <p class="text-sm uppercase tracking-[0.24em] text-[#6c707c] dark:text-slate-400">
+          Biography
+        </p>
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-[#0d1017] text-[#f7f4ef] dark:bg-[#f7f4ef] dark:text-[#0d1017]">
+          Story
+        </span>
+      </div>
+      <div class="mt-5 dark:text-slate-200">
+        <ContentStyling>
+          <Content />
+        </ContentStyling>
+      </div>
     </div>
   </div>
-  <Separator />
-  <div class="grid md:grid-cols-2 gap-8">
+  <Separator className="bg-[#0d1017]/10 dark:bg-white/10" />
+  <div class="grid md:grid-cols-2 gap-6">
     <CareerCards title="Education" content={educationCenters} />
     <CareerCards title="Work Experience" content={workCenters} />
   </div>

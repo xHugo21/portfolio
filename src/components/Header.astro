@@ -2,15 +2,58 @@
 import HeaderButtons from './HeaderButtons.astro'
 ---
 
-<div
-  class="fixed z-10 w-full h-20 bg-white dark:bg-slate-950 drop-shadow-xl flex flex-row justify-center items-center"
+<header
+  class="fixed top-0 z-20 w-full backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] bg-[#f7f4efcc] dark:bg-[#0b0d12cc]"
 >
   <div
-    class="flex justify-between items-center w-[85%] md:max-w-[900px] mx-auto"
+    class="flex justify-between items-center w-[min(1100px,90%)] mx-auto py-4"
   >
-    <div class="flex flex-row justify-center items-center gap-4">
-      <p class="text-xl md:text-3xl font-bold select-none">Hugo García</p>
+    <div class="flex items-center gap-4">
+      <div
+        class="relative h-10 w-10 rounded-full bg-gradient-to-br from-[#fb9d72] via-[#8dd9c9] to-[#6f7bff] shadow-md ring-2 ring-black/5 dark:ring-white/10"
+      >
+        <div
+          class="absolute inset-[3px] rounded-full bg-[#f7f4ef] dark:bg-[#0b0d12] flex items-center justify-center text-sm font-semibold text-[#0d1017] dark:text-[#f6f1e7]"
+        >
+          HG
+        </div>
+      </div>
+      <div class="leading-tight">
+        <p
+          class="text-[11px] uppercase tracking-[0.32em] text-[#6c707c] dark:text-slate-400"
+        >
+          Portfolio
+        </p>
+        <p class="text-xl font-semibold">Hugo García</p>
+      </div>
     </div>
-    <HeaderButtons />
+    <div class="flex items-center gap-6">
+      <nav
+        class="hidden md:flex items-center gap-6 text-sm uppercase tracking-[0.18em] text-[#6c707c] dark:text-slate-400"
+      >
+        <a
+          class="hover:text-[#0d1017] dark:hover:text-[#f6f1e7] transition-colors"
+          href="#biography"
+        >
+          About
+        </a>
+        <a
+          class="hover:text-[#0d1017] dark:hover:text-[#f6f1e7] transition-colors"
+          href="#projects"
+        >
+          Projects
+        </a>
+        <a
+          class="hover:text-[#0d1017] dark:hover:text-[#f6f1e7] transition-colors"
+          href="#contact"
+        >
+          Contact
+        </a>
+      </nav>
+      <HeaderButtons />
+    </div>
   </div>
-</div>
+  <div
+    class="h-px w-full bg-gradient-to-r from-transparent via-[#0d1017]/20 to-transparent dark:via-[#f6f1e7]/15"
+  ></div>
+</header>

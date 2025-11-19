@@ -12,23 +12,39 @@ const { title } = Astro.props
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta
+      name="description"
+      content="Portfolio of Hugo García — frontend engineer crafting smooth, resilient interfaces."
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-slate-50 text-slate-950 dark:bg-slate-950 dark:text-slate-50">
+  <body
+    class="min-h-screen bg-[#f7f4ef] text-[#0d1017] antialiased relative overflow-x-hidden dark:bg-[#0b0d12] dark:text-[#f6f1e7]"
+  >
+    <div
+      aria-hidden="true"
+      class="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(141,217,201,0.22),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(251,172,80,0.22),transparent_32%),radial-gradient(circle_at_50%_60%,rgba(99,118,255,0.18),transparent_35%)] dark:bg-[radial-gradient(circle_at_20%_20%,rgba(99,118,255,0.18),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(255,157,114,0.18),transparent_32%),radial-gradient(circle_at_60%_65%,rgba(120,243,209,0.16),transparent_35%)]"
+    ></div>
+    <div
+      aria-hidden="true"
+      class="pointer-events-none fixed inset-0 bg-[linear-gradient(120deg,rgba(13,17,23,0.05)_1px,transparent_1px),linear-gradient(210deg,rgba(13,17,23,0.05)_1px,transparent_1px)] bg-[length:160px_160px] mix-blend-soft-light dark:bg-[linear-gradient(120deg,rgba(246,241,231,0.05)_1px,transparent_1px),linear-gradient(210deg,rgba(246,241,231,0.05)_1px,transparent_1px)]"
+    ></div>
     <Header />
     <slot />
   </body>
 </html>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
   * {
-    font-family: 'Poppins', sans-serif;
     scrollbar-width: none;
   }
 </style>
