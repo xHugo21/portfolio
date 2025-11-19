@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -27,6 +27,13 @@ export default function Contact() {
     }))
   }
 
+  useEffect(() => {
+    const publicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY
+    if (publicKey) {
+      emailjs.init(publicKey)
+    }
+  }, [])
+
   const handleSubmit = (e) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -34,10 +41,9 @@ export default function Contact() {
 
     const serviceID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID
     const templateID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID
-    const userID = import.meta.env.PUBLIC_EMAILJS_USER_ID
 
     emailjs
-      .send(serviceID, templateID, formData, userID)
+      .send(serviceID, templateID, formData)
       .then(
         (result) => {
           console.log('Success:', result)
