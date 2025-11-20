@@ -4,22 +4,19 @@ import ProjectsGrid from '../components/ProjectsGrid.astro'
 ---
 
 <section id="projects" class="relative flex flex-col gap-8 scroll-mt-24">
+  <div class="pointer-events-none absolute inset-0 -z-10">
+    <div class="absolute left-[5%] top-[10%] h-40 w-40 rounded-full bg-[#8dd9c9]/26 blur-[110px] dark:bg-[#6f7bff]/18" />
+    <div class="absolute right-[2%] bottom-[-10%] h-48 w-48 rounded-full bg-[#fb9d72]/24 blur-[120px] dark:bg-[#fb9d72]/16" />
+  </div>
   <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
     <div class="space-y-2">
       <p class="text-xs uppercase tracking-[0.28em] text-[#6c707c] dark:text-slate-400">
         Selected work
       </p>
-      <h2 class="text-3xl md:text-4xl font-semibold leading-tight">
-        Interfaces crafted with intention and technical care.
-      </h2>
+      <h2 class="text-3xl md:text-4xl font-semibold leading-tight">Projects</h2>
       <p class="text-base text-[#3a3f48] dark:text-slate-300 max-w-2xl">
-        A mix of professional and personal projects, each focused on clarity,
-        momentum, and thoughtful details.
+        A snapshot of personal and professional builds.
       </p>
-    </div>
-    <div class="flex items-center gap-2 text-sm text-[#6c707c] dark:text-slate-400">
-      <span class="h-2 w-2 rounded-full bg-gradient-to-r from-[#fb9d72] to-[#8dd9c9]"></span>
-      <span>Hover cards for a closer look</span>
     </div>
   </div>
   <ProjectsGrid />

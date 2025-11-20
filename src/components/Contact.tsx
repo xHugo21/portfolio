@@ -66,12 +66,9 @@ export default function Contact() {
           <p className="text-xs uppercase tracking-[0.28em] text-[#6c707c] dark:text-slate-400">
             Contact
           </p>
-          <h2 className="text-3xl font-semibold leading-tight">
-            Let&apos;s build something purposeful together.
-          </h2>
+          <h2 className="text-3xl font-semibold leading-tight">Get in touch</h2>
           <p className="text-base text-[#3a3f48] dark:text-slate-300">
-            Tell me about your team, your product, or the experience you want to
-            craft—I&apos;ll reply within a day.
+            Don't hesitate on reaching out
           </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
