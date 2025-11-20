@@ -61,7 +61,7 @@ export default function Contact() {
         <div className="absolute left-[10%] top-[-5%] h-48 w-48 rounded-full bg-[#fb9d72]/40 blur-[100px] dark:bg-[#fb9d72]/25" />
         <div className="absolute right-[8%] bottom-[-5%] h-52 w-52 rounded-full bg-[#8dd9c9]/35 blur-[100px] dark:bg-[#6f7bff]/25" />
       </div>
-      <div className="relative mx-auto max-w-3xl rounded-3xl border border-[#0d1017]/10 bg-white/80 p-8 md:p-10 shadow-[0_25px_60px_rgba(0,0,0,0.07)] backdrop-blur dark:bg-white/5 dark:border-white/10">
+      <div className="relative mx-auto w-full rounded-3xl border border-[#0d1017]/10 bg-white/80 p-8 md:p-10 shadow-[0_25px_60px_rgba(0,0,0,0.07)] backdrop-blur dark:bg-white/5 dark:border-white/10">
         <div className="space-y-2">
           <p className="text-xs uppercase tracking-[0.28em] text-[#6c707c] dark:text-slate-400">
             Contact
