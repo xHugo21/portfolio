@@ -1,13 +1,5 @@
 {
   "title": "Spotistats",
-  "description": "A web application that provides insights about your Spotify listening habits",
-  "src": "media/spotistats.png",
-  "alt": "Spotistats",
-  "link": "https://github.com/xHugo21/spotistats",
-  "technologies": [
-    {
-      "name": "React",
-      "color": "blue"
-    }
-  ]
+  "description": "A personal analytics dashboard that transforms your Spotify listening history into meaningful insights. Explores the Spotify API to visualize your music taste, track listening patterns, and discover trends in your audio preferences over time.",
+  "link": "https://github.com/xHugo21/spotistats"
 }

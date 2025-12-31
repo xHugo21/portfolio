@@ -1,17 +1,5 @@
 {
-  "title": "IMDb Clone",
-  "description": "Easily find new movies and TV shows to watch. Data retrieved from IMDb and TMDb APIs",
-  "src": "media/imdb.png",
-  "alt": "IMDb Clone Preview",
-  "link": "https://github.com/xHugo21/imdb_academy",
-  "technologies": [
-    {
-      "name": "Vue",
-      "color": "green"
-    },
-    {
-      "name": "TypeScript",
-      "color": "blue"
-    }
-  ]
+  "title": "Movie Discovery",
+  "description": "A streamlined interface for discovering movies and TV shows, built to explore Vue 3's composition API and TypeScript integration. Pulls data from IMDb and TMDb APIs to provide rich content details and personalized recommendations.",
+  "link": "https://github.com/xHugo21/imdb_academy"
 }
