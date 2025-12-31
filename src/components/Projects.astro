@@ -44,7 +44,9 @@ const showViewMore = projects.length > 3
   const viewMoreBtn = document.getElementById('view-more-btn')
   const projectItems = document.querySelectorAll('.project-item')
 
-  if (viewMoreBtn && projectItems.length > 3) {
+  const isMobile = window.matchMedia('(max-width: 767px)').matches
+
+  if (viewMoreBtn && projectItems.length > 3 && !isMobile) {
     projectItems.forEach((item, index) => {
       if (index >= 3) {
         ;(item as HTMLElement).style.display = 'none'
@@ -57,5 +59,7 @@ const showViewMore = projects.length > 3
       })
       viewMoreBtn.style.display = 'none'
     })
+  } else if (isMobile && viewMoreBtn) {
+    viewMoreBtn.style.display = 'none'
   }
 </script>
