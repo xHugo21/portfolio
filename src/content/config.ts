@@ -1,38 +1,36 @@
 import { z, defineCollection } from 'astro:content'
 
-const biographyCollection = defineCollection({
-  type: 'content',
-})
-
 const projectsCollection = defineCollection({
   type: 'data',
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    src: z.string(),
-    alt: z.string(),
     link: z.string(),
-    technologies: z.array(
-      z.object({
-        name: z.string(),
-        color: z.string(),
-      })
-    ),
   }),
 })
 
-const bulletCollection = defineCollection({
+const educationCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    name: z.string(),
-    title: z.string(),
-    interval: z.string(),
+    institution: z.string(),
+    degree: z.string(),
+    year: z.number().optional(),
+  }),
+})
+
+const careerCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    company: z.string(),
+    position: z.string(),
+    location: z.string(),
+    startYear: z.number(),
+    endYear: z.number().optional(),
   }),
 })
 
 export const collections = {
-  biography: biographyCollection,
   projects: projectsCollection,
-  education: bulletCollection,
-  career: bulletCollection,
+  education: educationCollection,
+  career: careerCollection,
 }

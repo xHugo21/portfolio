@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content'
+
+const education = (await getCollection('education')).sort(
+  (a, b) => (b.data.year ?? 9999) - (a.data.year ?? 9999)
+)
+const career = (await getCollection('career')).sort(
+  (a, b) => b.data.startYear - a.data.startYear
+)
+---
+
+<section class="grid md:grid-cols-2 gap-8">
+  <div class="space-y-4">
+    <h2 class="text-section-mobile md:text-section font-serif font-semibold">
+      Education
+    </h2>
+    <div class="space-y-3">
+      {
+        education.map((item) => (
+          <article class="space-y-0.5">
+            <h3 class="text-body font-sans font-medium">{item.data.degree}</h3>
+            <p class="text-small text-text-secondary">
+              {item.data.institution}
+            </p>
+            <p class="text-small text-text-secondary">
+              {item.data.year || 'Ongoing'}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    <h2 class="text-section-mobile md:text-section font-serif font-semibold">
+      Experience
+    </h2>
+    <div class="space-y-3">
+      {
+        career.map((item) => (
+          <article class="space-y-0.5">
+            <h3 class="text-body font-sans font-medium">
+              {item.data.position}
+            </h3>
+            <p class="text-small text-text-secondary">
+              {item.data.company} · {item.data.location}
+            </p>
+            <p class="text-small text-text-secondary">
+              {item.data.startYear} – {item.data.endYear || 'Present'}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

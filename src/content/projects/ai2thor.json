@@ -1,17 +1,5 @@
 {
-    "title": "AI2THOR",
-    "description": "Interactive household task plan generator on iTHOR simulation environment",
-    "src": "media/ai2thor.png",
-    "alt": "iTHOR task examples",
-    "link": "https://github.com/xHugo21/ai2thor-hugo",
-    "technologies": [
-        {
-            "name": "Python",
-            "color": "blue"
-        },
-        {
-            "name": "PDDL",
-            "color": "gray"
-        }
-    ]
+  "title": "AI2THOR Interaction",
+  "description": "An interactive visualization tool for AI-driven spatial reasoning research. Built to help researchers understand how AI agents navigate and interact with 3D environments by translating complex spatial data into intuitive visual feedback.",
+  "link": "https://github.com/xHugo21/ai2thor-hugo"
 }
