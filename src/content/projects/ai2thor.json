@@ -1,5 +1,5 @@
 {
-  "title": "AI2THOR Interaction",
-  "description": "An interactive visualization tool for AI-driven spatial reasoning research. Built to help researchers understand how AI agents navigate and interact with 3D environments by translating complex spatial data into intuitive visual feedback.",
-  "link": "https://github.com/xHugo21/ai2thor-hugo"
+  "title": "AI2THOR Task Planner",
+  "description": "An interactive tool for generating and executing household task plans in the iTHOR simulation environment, leveraging automated planning and computer vision to enable intelligent agent behavior.",
+  "link": "https://github.com/xHugo21/ai2thor-task-planner"
 }
