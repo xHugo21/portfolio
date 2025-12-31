@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 
 const education = (await getCollection('education')).sort(
-  (a, b) => b.data.year - a.data.year
+  (a, b) => (b.data.year ?? 9999) - (a.data.year ?? 9999)
 )
 const career = (await getCollection('career')).sort(
   (a, b) => b.data.startYear - a.data.startYear
@@ -22,7 +22,9 @@ const career = (await getCollection('career')).sort(
             <p class="text-small text-text-secondary">
               {item.data.institution}
             </p>
-            <p class="text-small text-text-secondary">{item.data.year}</p>
+            <p class="text-small text-text-secondary">
+              {item.data.year || 'Ongoing'}
+            </p>
           </article>
         ))
       }
@@ -44,7 +46,7 @@ const career = (await getCollection('career')).sort(
               {item.data.company} · {item.data.location}
             </p>
             <p class="text-small text-text-secondary">
-              {item.data.startYear}–{item.data.endYear || 'Present'}
+              {item.data.startYear} – {item.data.endYear || 'Present'}
             </p>
           </article>
         ))
