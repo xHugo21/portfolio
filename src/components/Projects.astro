@@ -5,25 +5,29 @@ const projects = await getCollection('projects')
 ---
 
 <section class="space-y-8">
-  <h2 class="text-section-mobile md:text-section font-serif font-semibold">Projects</h2>
+  <h2 class="text-section-mobile md:text-section font-serif font-semibold">
+    Projects
+  </h2>
   <div class="space-y-6">
-    {projects.map((project) => (
-      <article class="space-y-1">
-        <h3 class="text-display-mobile md:text-display font-serif font-semibold">
-          {project.data.title}
-        </h3>
-        <p class="text-body text-text-secondary leading-relaxed max-w-prose">
-          {project.data.description}
-        </p>
-        <a 
-          href={project.data.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="link text-small inline-block"
-        >
-          → View Project
-        </a>
-      </article>
-    ))}
+    {
+      projects.map((project) => (
+        <article class="space-y-1">
+          <h3 class="text-display-mobile md:text-display font-serif font-semibold">
+            {project.data.title}
+          </h3>
+          <p class="text-body text-text-secondary leading-relaxed max-w-prose">
+            {project.data.description}
+          </p>
+          <a
+            href={project.data.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link text-small inline-block"
+          >
+            → View Project
+          </a>
+        </article>
+      ))
+    }
   </div>
 </section>
