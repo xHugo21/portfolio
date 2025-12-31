@@ -2,16 +2,17 @@
 import { getCollection } from 'astro:content'
 
 const projects = await getCollection('projects')
+const showViewMore = projects.length > 3
 ---
 
 <section class="space-y-8">
   <h2 class="text-section-mobile md:text-section font-serif font-semibold">
     Projects
   </h2>
-  <div class="space-y-6">
+  <div class="space-y-6" id="projects-container">
     {
-      projects.map((project) => (
-        <article class="space-y-1">
+      projects.map((project, index) => (
+        <article class="space-y-1 project-item" data-index={index}>
           <h3 class="text-display-mobile md:text-display font-serif font-semibold">
             {project.data.title}
           </h3>
@@ -30,4 +31,31 @@ const projects = await getCollection('projects')
       ))
     }
   </div>
+  {
+    showViewMore && (
+      <button id="view-more-btn" class="link text-medium" type="button">
+        View More
+      </button>
+    )
+  }
 </section>
+
+<script>
+  const viewMoreBtn = document.getElementById('view-more-btn')
+  const projectItems = document.querySelectorAll('.project-item')
+
+  if (viewMoreBtn && projectItems.length > 3) {
+    projectItems.forEach((item, index) => {
+      if (index >= 3) {
+        ;(item as HTMLElement).style.display = 'none'
+      }
+    })
+
+    viewMoreBtn.addEventListener('click', () => {
+      projectItems.forEach((item) => {
+        ;(item as HTMLElement).style.display = 'block'
+      })
+      viewMoreBtn.style.display = 'none'
+    })
+  }
+</script>
