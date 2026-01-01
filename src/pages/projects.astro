@@ -3,7 +3,8 @@ import '@/styles/globals.css'
 import Layout from '../layouts/Layout.astro'
 import { getCollection } from 'astro:content'
 
-const projects = await getCollection('projects')
+let projects = await getCollection('projects')
+projects = projects.sort((a, b) => a.data.order - b.data.order)
 ---
 
 <Layout title="Projects - Hugo García">

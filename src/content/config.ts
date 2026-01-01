@@ -6,6 +6,7 @@ const projectsCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     link: z.string(),
+    order: z.number(),
   }),
 })
 

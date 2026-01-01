@@ -1,8 +1,9 @@
 ---
 import { getCollection } from 'astro:content'
 
-const projects = await getCollection('projects')
-const hasMore = projects.length > 3
+const projects = await getCollection('projects');
+const sortedProjects = projects.sort((a, b) => a.data.order - b.data.order);
+const hasMore = sortedProjects.length > 3;
 ---
 
 <section class="space-y-8">
@@ -11,7 +12,7 @@ const hasMore = projects.length > 3
   </h2>
   <div class="space-y-6">
     {
-      projects.map((project, index) => (
+      sortedProjects.map((project, index) => (
         <article class:list={['space-y-1', { 'md:hidden': index >= 3 }]}>
           <h3 class="text-display-mobile md:text-display font-serif font-semibold">
             {project.data.title}
