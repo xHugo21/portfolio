@@ -19,10 +19,10 @@ const career = (await getCollection('career')).sort(
         education.map((item) => (
           <article class="space-y-0.5">
             <h3 class="text-body font-sans font-medium">{item.data.degree}</h3>
-            <p class="text-small text-text-secondary">
+            <p class="text-small text-text-secondary dark:text-text-secondary-dark">
               {item.data.institution}
             </p>
-            <p class="text-small text-text-secondary">
+            <p class="text-small text-text-secondary dark:text-text-secondary-dark">
               {item.data.year || 'Ongoing'}
             </p>
           </article>
@@ -42,10 +42,10 @@ const career = (await getCollection('career')).sort(
             <h3 class="text-body font-sans font-medium">
               {item.data.position}
             </h3>
-            <p class="text-small text-text-secondary">
+            <p class="text-small text-text-secondary dark:text-text-secondary-dark">
               {item.data.company} · {item.data.location}
             </p>
-            <p class="text-small text-text-secondary">
+            <p class="text-small text-text-secondary dark:text-text-secondary-dark">
               {item.data.startYear} – {item.data.endYear || 'Present'}
             </p>
           </article>

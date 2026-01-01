@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-page text-text font-sans antialiased;
+    @apply bg-page text-text dark:bg-page-dark dark:text-text-dark font-sans antialiased;
   }
 
   h1,
@@ -17,24 +17,24 @@
   h4,
   h5,
   h6 {
-    @apply font-serif font-semibold text-text;
+    @apply font-serif font-semibold text-text dark:text-text-dark;
   }
 }
 
 @layer components {
   .link {
-    @apply text-accent font-medium no-underline;
+    @apply text-accent dark:text-accent-dark font-medium no-underline;
     @apply transition-colors duration-200;
-    @apply hover:text-accent-hover;
+    @apply hover:text-accent-hover dark:hover:text-accent-hover-dark;
   }
 
   .link-underline {
-    @apply text-text-secondary font-medium no-underline;
+    @apply text-text-secondary dark:text-text-secondary-dark font-medium no-underline;
     @apply transition-all duration-200;
-    @apply hover:text-accent;
+    @apply hover:text-accent dark:hover:text-accent-dark;
   }
 
   .section-divider {
-    @apply w-full h-px bg-border my-12;
+    @apply w-full h-px bg-border dark:bg-border-dark my-12;
   }
 }

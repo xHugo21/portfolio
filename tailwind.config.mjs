@@ -3,9 +3,9 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: 'media',
   theme: {
     extend: {
-      // Typography
       fontFamily: {
         serif: ['Crimson Pro', ...defaultTheme.fontFamily.serif],
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
@@ -30,22 +30,37 @@ export default {
         small: ['0.875rem', { lineHeight: '1.6', letterSpacing: '0' }],
       },
 
-      // Colors - Refined Minimal with Blue Accent
       colors: {
-        page: '#FAFAFA',
-        text: '#1A1A1A',
-        'text-secondary': '#737373',
-        accent: '#2563EB',
-        'accent-hover': '#1D4ED8',
-        border: '#E5E5E5',
+        page: {
+          DEFAULT: '#FAFAFA',
+          dark: '#1C1C1E',
+        },
+        text: {
+          DEFAULT: '#1A1A1A',
+          dark: '#E5E5E5',
+        },
+        'text-secondary': {
+          DEFAULT: '#737373',
+          dark: '#A3A3A3',
+        },
+        accent: {
+          DEFAULT: '#2563EB',
+          dark: '#3B82F6',
+        },
+        'accent-hover': {
+          DEFAULT: '#1D4ED8',
+          dark: '#60A5FA',
+        },
+        border: {
+          DEFAULT: '#E5E5E5',
+          dark: '#262626',
+        },
       },
 
-      // Max widths
       maxWidth: {
         content: '56rem',
       },
 
-      // Border radius
       borderRadius: {
         none: '0',
         sm: '0.25rem',

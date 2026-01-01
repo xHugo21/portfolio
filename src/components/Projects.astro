@@ -16,7 +16,7 @@ const hasMore = projects.length > 3
           <h3 class="text-display-mobile md:text-display font-serif font-semibold">
             {project.data.title}
           </h3>
-          <p class="text-body text-text-secondary leading-relaxed max-w-prose">
+          <p class="text-body text-text-secondary dark:text-text-secondary-dark leading-relaxed max-w-prose">
             {project.data.description}
           </p>
           <a
@@ -33,8 +33,8 @@ const hasMore = projects.length > 3
   </div>
   {
     hasMore && (
-      <a href="/projects" class="link text-small md:inline-block hidden">
-        → View All Projects
+      <a href="/projects" class="link md:inline-block hidden">
+        View All Projects
       </a>
     )
   }
