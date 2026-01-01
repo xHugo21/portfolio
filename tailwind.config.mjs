@@ -6,7 +6,6 @@ export default {
   darkMode: 'media',
   theme: {
     extend: {
-      // Typography
       fontFamily: {
         serif: ['Crimson Pro', ...defaultTheme.fontFamily.serif],
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
@@ -31,11 +30,10 @@ export default {
         small: ['0.875rem', { lineHeight: '1.6', letterSpacing: '0' }],
       },
 
-      // Colors - Refined Minimal with Blue Accent
       colors: {
         page: {
           DEFAULT: '#FAFAFA',
-          dark: '#0A0A0A',
+          dark: '#1C1C1E',
         },
         text: {
           DEFAULT: '#1A1A1A',
@@ -59,12 +57,10 @@ export default {
         },
       },
 
-      // Max widths
       maxWidth: {
         content: '56rem',
       },
 
-      // Border radius
       borderRadius: {
         none: '0',
         sm: '0.25rem',
