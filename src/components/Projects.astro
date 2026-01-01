@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content'
 
 const projects = await getCollection('projects')
-const displayedProjects = projects.slice(0, 3)
 const hasMore = projects.length > 3
 ---
 
@@ -12,8 +11,11 @@ const hasMore = projects.length > 3
   </h2>
   <div class="space-y-6">
     {
-      displayedProjects.map((project) => (
-        <article class="space-y-1" transition:name={`project-${project.id}`}>
+      projects.map((project, index) => (
+        <article class:list={[
+          "space-y-1",
+          { "hidden md:block": index >= 3 }
+        ]} transition:name={`project-${project.id}`}>
           <h3 class="text-display-mobile md:text-display font-serif font-semibold">
             {project.data.title}
           </h3>
@@ -34,7 +36,7 @@ const hasMore = projects.length > 3
   </div>
   {
     hasMore && (
-      <a href="/projects" class="link text-small inline-block">
+      <a href="/projects" class="link text-small hidden md:inline-block">
         → View All Projects
       </a>
     )
